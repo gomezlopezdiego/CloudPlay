@@ -5,6 +5,21 @@ import path from "path";
 
 const app = express();
 
+//CONEXION A BASE DE DATOS 
+const mongoose = require('mongoose');
+const uri = 'mongodb://localhost:27017/musicapp';
+const options = {useNewUrlParser: true, useUnifiedTopology: true};
+
+// Or using promises
+mongoose.connect(uri, options).then(
+  () => {
+    console.log("Conectado a DB");
+  },
+  (err) => {
+    console.log(err);
+  }
+);
+
 //MIDDLEWARE
 app.use(morgan("tiny"));
 app.use(cors());
