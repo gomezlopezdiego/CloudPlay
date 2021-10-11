@@ -4,7 +4,7 @@ const router = express.Router();
 // importar el modelo cancion
 import Cancion from "../models/cancion";
 
-// Agregar una cancion
+// Agregar un a cancion
 router.post("/nueva-cancion", async (req, res) => {
   const body = req.body;
   try {
